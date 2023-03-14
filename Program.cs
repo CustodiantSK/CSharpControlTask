@@ -70,7 +70,7 @@ PrintMassive(index);
 Console.ResetColor();
 Console.WriteLine();
 
-Console.Write($"Посмотите все данные, состоящие из 3 символов: ");
+Console.Write($"Посмотрите все данные, состоящие из 3 символов: ");
 Console.ForegroundColor = ConsoleColor.DarkBlue;
 Console.Write("[");
 MassiveB(index);
