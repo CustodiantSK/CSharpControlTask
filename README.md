@@ -18,4 +18,5 @@
 5. Реализован вывод на печать информации о отсутвии данных в выборке.
 
 
-![Блок-схема рабочей программы](\CSharpControlTask\Program.png)
+
+![Блок-схема рабочей программы](https://raw.githubusercontent.com/Custodiant/CSharpControlTask/main/Program.png)
