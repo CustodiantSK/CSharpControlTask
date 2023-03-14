@@ -1,11 +1,11 @@
 ﻿
 void MassiveA(string[] stroke)  /* Метод заполнения массива */
 {
-    Console.WriteLine("Введите данные.");
-    Console.ForegroundColor = ConsoleColor.Red;
+    Console.ForegroundColor = ConsoleColor.Yellow;
     Console.WriteLine("PS: Если хотите прекратить ввод, введите цифру 0,");
     Console.WriteLine("и остальная часть заполнится нулевыми значениями.");
     Console.ResetColor();
+    Console.WriteLine("Введите данные.");
     string exit = "0";
     for (int count = 0; count < stroke.Length; count++)
     {
@@ -32,6 +32,10 @@ void PrintMassive(string[] collect) /* Метод печати массива */
     Console.Write($"[");
     for (int index = 0; index < count - 1; index++)
     {
+        if (collect[index] == null)
+        {
+            break;
+        }
         Console.Write($"{collect[index]}; ");
     }
     Console.Write($"{collect[count - 1]}]");
@@ -40,12 +44,14 @@ void PrintMassive(string[] collect) /* Метод печати массива */
 void MassiveB(string[] collectb)   /*  Метод печати 3х символьных значений */
 {
     int control = 0;
+    string exit = "0";
     for (int count = 0; count < collectb.Length; count++)
     {
         string stroke = collectb[count];
-        if (stroke.Length == 3)
+        if (stroke.Length <= 3)
         {
-            Console.Write($" {collectb[count]} ");
+            if (stroke != exit)
+                Console.Write($" {collectb[count]} ");
             control++;
         }
     }
@@ -79,3 +85,33 @@ Console.Write("]");
 Console.ResetColor();
 Console.WriteLine();
 
+Console.Write($"Альтернативное решение: ");
+string[] tree = new string[nums];
+int control = 0;
+
+for (int count = 0; count < nums; count++)
+{
+    string exit = "0";
+    {
+        string stroke = index[count];
+        if (stroke.Length <= 3)
+        {
+            if (stroke != exit)
+            {
+                tree[control] = index[count];
+                control++;
+            }
+        }
+    }
+}
+if (control == 0)
+{
+    Console.ForegroundColor = ConsoleColor.DarkRed;
+    Console.Write($" В заданном тексте, нет нужных данных! ");
+    Console.ResetColor();
+}
+Console.ForegroundColor = ConsoleColor.DarkGreen;
+PrintMassive(tree);
+Console.ForegroundColor = ConsoleColor.DarkGreen;
+Console.ResetColor();
+Console.WriteLine();
