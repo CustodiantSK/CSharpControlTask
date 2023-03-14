@@ -6,20 +6,20 @@ void MassiveA(string[] stroke)  /* Метод заполнения массив�
     Console.WriteLine("и остальная часть заполнится нулевыми значениями.");
     Console.ResetColor();
     Console.WriteLine("Введите данные.");
-    string exit = "0";
-    for (int count = 0; count < stroke.Length; count++)
+    string exitArray = "0";
+    for (int countArray = 0; countArray < stroke.Length; countArray++)
     {
         string text = Console.ReadLine()!;
-        if (text != exit)
+        if (text != exitArray)
         {
-            stroke[count] = text;
+            stroke[countArray] = text;
         }
         else
         {
-            for (; count < stroke.Length; count++)
+            for (; countArray < stroke.Length; countArray++)
             {
                 text = "0";
-                stroke[count] = text;
+                stroke[countArray] = text;
             }
         }
     }
@@ -68,18 +68,18 @@ Console.Clear();
 Console.WriteLine($"Сколько элементов хотите проверить?");
 int nums = int.Parse(Console.ReadLine()!);
 
-string[] index = new string[nums];
-MassiveA(index);
+string[] array = new string[nums];
+MassiveA(array);
 Console.Write($"Ваши вводные данные: ");
 Console.ForegroundColor = ConsoleColor.DarkYellow;
-PrintMassive(index);
+PrintMassive(array);
 Console.ResetColor();
 Console.WriteLine();
 
 Console.Write($"Посмотрите все данные, состоящие из 3 символов: ");
 Console.ForegroundColor = ConsoleColor.DarkBlue;
 Console.Write("[");
-MassiveB(index);
+MassiveB(array);
 Console.ForegroundColor = ConsoleColor.DarkBlue;
 Console.Write("]");
 Console.ResetColor();
@@ -93,12 +93,12 @@ for (int count = 0; count < nums; count++)
 {
     string exit = "0";
     {
-        string stroke = index[count];
+        string stroke = array[count];
         if (stroke.Length <= 3)
         {
             if (stroke != exit)
             {
-                tree[control] = index[count];
+                tree[control] = array[count];
                 control++;
             }
         }
